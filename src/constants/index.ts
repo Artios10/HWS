@@ -3,7 +3,8 @@ export const APP_NAME = process.env.NEXT_PUBLIC_APP_NAME || 'LaunchTime';
 export const APP_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 export const SUPPORT_EMAIL = process.env.NEXT_PUBLIC_SUPPORT_EMAIL || 'support@launchtime.com';
 
-// Appwrite constants
+// TODO: Replace with your own backend - Appwrite Configuration
+// Replace these environment variables with your own backend endpoints
 export const APPWRITE_ENDPOINT = process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT || '';
 export const APPWRITE_PROJECT_ID = process.env.NEXT_PUBLIC_APPWRITE_PROJECT_ID || '';
 export const APPWRITE_DATABASE_ID = process.env.NEXT_PUBLIC_APPWRITE_DATABASE_ID || '';
@@ -20,10 +21,12 @@ export const COLLECTIONS = {
   APP_SETTINGS: process.env.NEXT_PUBLIC_APPWRITE_APP_SETTINGS_COLLECTION_ID || '',
 };
 
-// Agora constants
+// TODO: Replace with your own backend - Video Calling Service (Agora)
+// Replace with your own video calling service (Agora, Twilio, etc.)
 export const AGORA_APP_ID = process.env.NEXT_PUBLIC_AGORA_APP_ID || '';
 
-// Paystack constants
+// TODO: Replace with your own backend - Payment Processing (Paystack)
+// Replace with your own payment processor (Stripe, PayPal, etc.)
 export const PAYSTACK_PUBLIC_KEY = process.env.NEXT_PUBLIC_PAYSTACK_PUBLIC_KEY || '';
 export const PAYSTACK_SECRET_KEY = process.env.PAYSTACK_SECRET_KEY || '';
 export const PAYSTACK_WEBHOOK_SECRET = process.env.PAYSTACK_WEBHOOK_SECRET || '';

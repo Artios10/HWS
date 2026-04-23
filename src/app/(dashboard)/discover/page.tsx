@@ -36,7 +36,7 @@ export default function DiscoverPage() {
         'orderBy=$createdAt',
         'orderType=desc',
       ]);
-      setHosts(hostsData.documents);
+      setHosts(hostsData.documents as unknown as Host[]);
     } catch (error) {
       console.error('Error loading hosts:', error);
     } finally {

@@ -9,16 +9,25 @@
     "lint": "eslint"
   },
   "dependencies": {
+    // TODO: Replace with your own backend - UI Components
     "@headlessui/react": "^2.2.10",
     "@hookform/resolvers": "^5.2.2",
+    // TODO: Replace with your own backend - Video Calling (Agora)
+    // Replace with your video calling SDK
     "agora-rtc-react": "^2.5.1",
     "agora-rtc-sdk-ng": "^4.24.3",
+    // TODO: Replace with your own backend - Database/Auth (Appwrite)
+    // Replace with your backend SDK (Supabase, Firebase, etc.)
     "appwrite": "^24.2.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
+    // TODO: Remove if not using Expo
+    "expo": "^55.0.17",
     "lucide-react": "^1.8.0",
     "next": "16.2.4",
+    // TODO: Replace with your own backend - Payment Processing (Paystack)
+    // Replace with your payment processor SDK
     "paystack-js": "^0.18.1",
     "react": "19.2.4",
     "react-dom": "19.2.4",

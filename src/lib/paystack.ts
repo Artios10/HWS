@@ -1,6 +1,15 @@
 import axios from 'axios';
 import { PAYSTACK_SECRET_KEY, PAYSTACK_PUBLIC_KEY } from '@/constants';
 
+// TODO: Replace with your own backend - Payment Processing
+// Replace this entire file with your own payment processor
+// This file handles all payment operations using Paystack
+// You'll need to:
+// 1. Choose a payment processor (Stripe, PayPal, Flutterwave, etc.)
+// 2. Replace all payment functions with your chosen processor's API
+// 3. Update webhook handling for payment confirmations
+// 4. Ensure PCI compliance for payment data handling
+
 // TODO: replace with your Paystack secret key on the server only
 const paystackSecret = PAYSTACK_SECRET_KEY;
 
@@ -12,6 +21,9 @@ export const paystackServer = axios.create({
     'Content-Type': 'application/json',
   },
 });
+
+// TODO: Replace with your own backend - Payment Functions
+// Replace these functions with your payment processor's API calls
 
 // Initialize transaction
 export const initializeTransaction = async (data: {

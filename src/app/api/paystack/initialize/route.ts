@@ -1,6 +1,14 @@
 import { initializeTransaction } from '@/lib/paystack';
 import { db } from '@/lib/appwrite';
 
+// TODO: Replace with your own backend - Payment Initialization API Route
+// This API route handles payment initialization
+// You'll need to:
+// 1. Replace Paystack calls with your payment processor
+// 2. Update database operations to use your backend
+// 3. Handle payment metadata according to your payment processor's requirements
+// 4. Implement proper error handling and validation
+
 export async function POST(request: Request) {
   try {
     const body = await request.json();
@@ -14,10 +22,12 @@ export async function POST(request: Request) {
       );
     }
 
-    // TODO: Replace with your actual Paystack callback URL
+    // TODO: Replace with your own backend - Payment Callback URL
+    // Update this callback URL to point to your payment verification endpoint
     const callbackUrl = `${process.env.NEXT_PUBLIC_APP_URL}/api/paystack/verify?userId=${userId}&coins=${coins}`;
 
-    // Initialize Paystack transaction
+    // TODO: Replace with your own backend - Payment Initialization
+    // Replace this Paystack call with your payment processor's initialization
     const response = await initializeTransaction({
       email,
       amount,
@@ -37,7 +47,8 @@ export async function POST(request: Request) {
       );
     }
 
-    // Create pending transaction record
+    // TODO: Replace with your own backend - Transaction Record Creation
+    // Replace this database call with your backend's transaction creation
     try {
       await db.coinTransactions.create({
         userId,

@@ -5,6 +5,14 @@ import { account } from '@/lib/appwrite';
 import { User } from '@/types';
 import { isAdmin } from '@/utils';
 
+// TODO: Replace with your own backend - Authentication Hook
+// This hook manages user authentication state
+// You'll need to:
+// 1. Replace Appwrite auth calls with your authentication system
+// 2. Update user data fetching to match your backend's user model
+// 3. Handle authentication state persistence (localStorage, cookies, etc.)
+// 4. Implement proper error handling for auth failures
+
 interface AuthContextType {
   user: User | null;
   isLoading: boolean;
@@ -37,8 +45,10 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     try {
       const currentUser = await account.get();
       if (currentUser) {
-        // TODO: Fetch additional user data from database
-        // For now, create a basic user object
+        // TODO: Replace with your own backend - User Data Fetching
+        // Replace this with your backend's user data fetching
+        // Currently only gets basic auth data, you need to fetch full user profile
+        // from your database including accountType, interests, etc.
         const userData: User = {
           userId: currentUser.$id,
           email: currentUser.email,

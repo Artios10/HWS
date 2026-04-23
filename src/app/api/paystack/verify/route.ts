@@ -2,6 +2,14 @@ import { verifyTransaction } from '@/lib/paystack';
 import { db } from '@/lib/appwrite';
 import { PLATFORM_COMMISSION_PERCENT } from '@/constants';
 
+// TODO: Replace with your own backend - Payment Verification API Route
+// This API route handles payment verification and coin crediting
+// You'll need to:
+// 1. Replace Paystack verification with your payment processor's webhook/callback
+// 2. Update database operations to use your backend
+// 3. Implement proper transaction handling and rollback on failures
+// 4. Handle duplicate webhook calls to prevent double crediting
+
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url);
@@ -13,7 +21,8 @@ export async function GET(request: Request) {
       return new Response('Missing parameters', { status: 400 });
     }
 
-    // Verify payment with Paystack
+    // TODO: Replace with your own backend - Payment Verification
+    // Replace this Paystack verification with your payment processor's verification
     const response = await verifyTransaction(reference);
 
     if (!response.status) {
@@ -24,7 +33,8 @@ export async function GET(request: Request) {
 
     // Check if payment was successful
     if (paymentData.status !== 'success') {
-      // Update transaction status
+      // TODO: Replace with your own backend - Failed Transaction Handling
+      // Update transaction status in your database
       try {
         const txns = await db.coinTransactions.list([
           `reference=${reference}`,
@@ -41,7 +51,8 @@ export async function GET(request: Request) {
       return new Response('Payment not successful', { status: 400 });
     }
 
-    // Credit coins to user wallet
+    // TODO: Replace with your own backend - Coin Crediting Logic
+    // Credit coins to user wallet in your database
     try {
       // Get current wallet
       const wallet = await db.wallets.get(userId);

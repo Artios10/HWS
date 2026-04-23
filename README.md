@@ -24,29 +24,33 @@ A production-ready video-call social dating web app built with Next.js, TypeScri
 
 ## Getting Started
 
-1. **Clone and Install**:
+1. **Check Launch Status**: 📖 **[Read the Launch Readiness Report](docs/LAUNCH_READINESS.md)** to understand what's ready and what needs to be done
+
+2. **Backend Migration**: 🔄 **[Follow the Backend Migration Guide](docs/BACKEND_MIGRATION.md)** to replace external services with your own backend
+
+3. **Clone and Install**:
    ```bash
    git clone <your-repo-url>
    cd launchtime
    npm install
    ```
 
-2. **Setup External Services**:
+4. **Setup External Services**:
    - Follow the detailed setup guide in [SETUP.md](./SETUP.md)
    - Create accounts and get API keys for Appwrite, Agora, and Paystack
 
-3. **Environment Variables**:
+5. **Environment Variables**:
    ```bash
    cp .env.example .env.local
    # Edit .env.local with your actual values
    ```
 
-4. **Run Development Server**:
+6. **Run Development Server**:
    ```bash
    npm run dev
    ```
 
-5. **Open** [http://localhost:3000](http://localhost:3000)
+7. **Open** [http://localhost:3000](http://localhost:3000)
 
 ## Project Structure
 
